@@ -4,6 +4,10 @@ const jwt = require("jsonwebtoken")
 
 const tokenExtractor = (request: any, response: any, next: any) => {
 
+
+  if (request.originalUrl === '/api/login') next()
+  if (request.originalUrl === '/api/register') next()
+
   let token
   const authorization = request.get("authorization")
 
