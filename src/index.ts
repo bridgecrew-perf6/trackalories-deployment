@@ -6,7 +6,7 @@ import mealsRouter from './routes/mealsRoutes'
 import weightRouter from './routes/weightRoutes'
 import personalRouter from './routes/personalRoutes'
 const tokenExtractor = require('./utils/tokenExtractor')
-import cors from 'cors'
+
 import { connect } from 'mongoose'
 import pingRouter from './routes/pingRoutes'
 import eliminateUserRouter from './routes/eliminateUserRoutes'
@@ -14,7 +14,7 @@ import eliminateUserRouter from './routes/eliminateUserRoutes'
 
 const app = express()
 
-app.use(cors())
+
 app.use(express.json())
 app.use(express.static('build'));
 
