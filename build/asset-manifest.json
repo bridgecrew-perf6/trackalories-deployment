@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.d99315ac.css",
-    "main.js": "/static/js/main.6911cdf2.js",
+    "main.js": "/static/js/main.759bf4fc.js",
     "static/media/calories-icon-4.jpg": "/static/media/calories-icon-4.c1c2ec91ead55fe3810a.jpg",
     "index.html": "/index.html",
     "main.d99315ac.css.map": "/static/css/main.d99315ac.css.map",
-    "main.6911cdf2.js.map": "/static/js/main.6911cdf2.js.map"
+    "main.759bf4fc.js.map": "/static/js/main.759bf4fc.js.map"
   },
   "entrypoints": [
     "static/css/main.d99315ac.css",
-    "static/js/main.6911cdf2.js"
+    "static/js/main.759bf4fc.js"
   ]
 }
