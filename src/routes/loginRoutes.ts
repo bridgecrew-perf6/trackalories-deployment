@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 import User from '../schemas/userSchema';
 const jwt = require("jsonwebtoken")
 
-
 const loginRouter = express.Router()
 
 loginRouter.post('/', async (request, response) => {

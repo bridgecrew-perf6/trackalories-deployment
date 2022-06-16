@@ -1,10 +1,11 @@
 import express from 'express'
 import User from '../schemas/userSchema'
+import tokenExtractor from '../utils/tokenExtractor'
 
 
 const weightRouter = express.Router()
 
-weightRouter.get("/", async (request, response) => {
+weightRouter.get("/",tokenExtractor, async (request, response) => {
   const { userID } = request.body
   const returnedUser: any = await User.findById(userID)
   let weight = returnedUser.weight
@@ -22,7 +23,7 @@ weightRouter.get("/", async (request, response) => {
 
 })
 
-weightRouter.post('/', async (request, response) => {
+weightRouter.post('/',tokenExtractor, async (request, response) => {
   const { weight, date, userID } = request.body
 
   const user: any = await User.findById(userID)

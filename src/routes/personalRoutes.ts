@@ -1,12 +1,13 @@
 import express from 'express'
 import { SALT_ROUNDS } from '../config/config'
 import User from '../schemas/userSchema'
+import tokenExtractor from '../utils/tokenExtractor';
 const bcrypt = require('bcrypt');
 
 const personalRouter = express.Router()
 
 
-personalRouter.get("/", async (request, response) => {
+personalRouter.get("/",tokenExtractor, async (request, response) => {
   const { userID } = request.body
   const returnedUser: any = await User.findById(userID)
   let { username, email, activity, height, weight } = returnedUser
@@ -24,7 +25,7 @@ personalRouter.get("/", async (request, response) => {
 })
 
 
-personalRouter.put('/', async (request, response) => {
+personalRouter.put('/',tokenExtractor, async (request, response) => {
   let { userID, username, email, password, activity } = request.body
 
 

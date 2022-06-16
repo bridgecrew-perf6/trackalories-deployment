@@ -1,10 +1,11 @@
 import express from "express";
 import Entry from "../schemas/entrySchema";
 import User from "../schemas/userSchema";
+import tokenExtractor from "../utils/tokenExtractor";
 
 const eliminateUserRouter = express.Router()
 
-eliminateUserRouter.delete('/', async (request, response) => {
+eliminateUserRouter.delete('/',tokenExtractor, async (request, response) => {
   const { userID } = request.body
 
   const returnedUser: any = await User.findByIdAndDelete(userID)
@@ -16,7 +17,6 @@ eliminateUserRouter.delete('/', async (request, response) => {
 
 
   try {
-    console.log("ENTRA");
     
     return response.status(200).json({ message: 'Erased from the DB' })
   } catch (error) {
